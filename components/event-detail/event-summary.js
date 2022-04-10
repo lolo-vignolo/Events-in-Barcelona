@@ -1,4 +1,3 @@
-import Button from '../ui/button';
 import classes from './event-summary.module.css';
 
 function EventSummary({ title }) {
