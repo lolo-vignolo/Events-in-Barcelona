@@ -3,7 +3,7 @@ import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/router';
 
 import classes from './authForm.module.css';
-import createUser from './CreateUser';
+import createUser from '../auth/createUser';
 
 function AuthForm() {
   const inputRefEmail = useRef();
