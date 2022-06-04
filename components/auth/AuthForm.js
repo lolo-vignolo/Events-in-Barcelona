@@ -9,6 +9,11 @@ function AuthForm() {
   const inputRefEmail = useRef();
   const inputRefPassword = useRef();
 
+  //modal
+  const [modalVisible, setModalVisible] = useState(false);
+  const [modalError, setMessageError] = useState(false);
+  const [loginError, setLoginError] = useState(false);
+
   const router = useRouter();
 
   // puedo agregar validation
@@ -24,6 +29,9 @@ function AuthForm() {
 
     const userEmail = inputRefEmail.current.value;
     const userPassword = inputRefPassword.current.value;
+    setMessageError(false);
+    setModalVisible(false);
+    setLoginError(false);
 
     if (isLogin) {
       const result = await signIn('credentials', {
@@ -31,6 +39,9 @@ function AuthForm() {
         email: userEmail,
         password: userPassword,
       });
+      if (result.error) {
+        setLoginError(true);
+      }
       if (!result.error) {
         router.replace('/');
       }
@@ -38,8 +49,14 @@ function AuthForm() {
       // creo nuevo
       try {
         const result = await createUser(userEmail, userPassword);
+        if (!result.message) {
+          setMessageError(true);
+        } else {
+          setModalVisible(true);
+        }
         console.log(result);
       } catch (err) {
+        setMessageError(true);
         console.log(err);
       }
     }
@@ -71,6 +88,19 @@ function AuthForm() {
           >
             {isLogin ? 'Create new account' : 'Login with existing account'}
           </button>
+          <h3 style={{ color: '#DA353F' }}>
+            If this is your first time in the App, create an account
+          </h3>
+
+          <h3 className={classes.messageError}>
+            {loginError && ' your password or email is incorrect, try again'}
+          </h3>
+          <h3 className={classes.message}>
+            {modalVisible && ' new user created, now go to Login!'}
+          </h3>
+          <h3 className={classes.messageError}>
+            {modalError && 'there already exist an user with that Email'}
+          </h3>
         </div>
       </form>
     </section>

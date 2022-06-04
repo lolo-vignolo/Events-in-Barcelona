@@ -17,5 +17,17 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-icons": "^4.3.1"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": "dummy-data.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lolo-vignolo/Events-in-Barcelona.git"
+  },
+  "author": "vignolo_3@hotmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lolo-vignolo/Events-in-Barcelona/issues"
+  },
+  "homepage": "https://github.com/lolo-vignolo/Events-in-Barcelona#readme"
 }
