@@ -74,7 +74,7 @@
 
 .first-time {
   color: '#DA353F';
-  font-size: small;
+  font-size: 10px;
 }
 
 @media (min-width: 768px) {
