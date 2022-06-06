@@ -90,7 +90,7 @@ function AuthForm() {
           </button>
           <h3
             className="textLogin"
-            style={{ color: '#DA353F', fontSize: 'small' }}
+            style={{ color: '#DA353F', fontSize: 'medium' }}
           >
             If this is your first time in the App, create an account
           </h3>
