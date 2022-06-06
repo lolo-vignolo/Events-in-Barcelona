@@ -72,6 +72,11 @@
   color: #6c757d;
 }
 
+.first-time {
+  color: '#DA353F';
+  font-size: small;
+}
+
 @media (min-width: 768px) {
   .auth {
     width: 50%;
@@ -106,5 +111,8 @@
     color: white;
     width: 20rem;
     margin-top: 5px;
+  }
+  .first-time {
+    font-size: xx-large;
   }
 }
