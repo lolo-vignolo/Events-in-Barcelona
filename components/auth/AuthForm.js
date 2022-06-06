@@ -88,7 +88,7 @@ function AuthForm() {
           >
             {isLogin ? 'Create new account' : 'Login with existing account'}
           </button>
-          <h3 className="first-time" style={{ color: '#DA353F' }}>
+          <h3 className="textLogin">
             If this is your first time in the App, create an account
           </h3>
 
